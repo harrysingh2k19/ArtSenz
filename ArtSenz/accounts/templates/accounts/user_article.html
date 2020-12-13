@@ -1,0 +1,45 @@
+{% extends 'base.html'  %}
+{% load static %}
+{% block content %}
+
+
+<div class=" p-3 rounded-lg  " >
+    <h1 class="text-center" >Welcome Your Dashboard <br> {{ user.first_name }} {{ user.last_name }}  </h1>
+    <a class="btn btn-primary" type="button" href="{% url 'add_article' %}"> Add Article</a>
+    <!-- <button class="btn btn-primary" type="button" name="button" href="{% url 'add_article' %}">Add Article </button> -->
+</div>
+<div class="pad">
+  <div class="card-columns ">
+    {% for article in articles %}
+      <div class="round_div   shadow pt-1 pb-3 mb-3">
+        <div class="div_class border border-white ">
+          <div class="card   rounded">
+            <div class="text-center mt-3">
+              <h4>{{article.header }}</h4>
+            </div>
+            <hr>
+            <div class="card-body">
+              {% if article.content|length >= 210 %}
+                <p class="card-text">{{article.content }} <a href="{% url 'article' article.header %}">....(Read More)</a> </p>
+              {% else %}
+                <p class="card-text">{{article.content }} </p>
+              {% endif %}
+            </div>
+            <div class="row card-footer text-muted">
+              <div class="col-6">
+                {{ article.likes }} <a><i class="far fa-eye"></i></a>
+              </div>
+              <div class="col-6">
+                <div class=" text-right" >
+                  {{ article.date }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'base.html'  %}
+{% load static %}
+{% block content %}
+
+<div class="   space rounded-lg shadow  " >
+  <div class="d-flex justify-content-center row p-1">
+    <div class=" col-lg-8">
+      <div class="round_div    pt-1">
+        <div class="div_class border border-white  " >
+          <h2 class="text-center" >{{article.header }} </h2>
+          <div class="row">
+            <div class="col-6">
+              {{ article.date }}
+
+            </div>
+          </div>
+          <hr>
+          <h4> {{article.content|linebreaksbr }} </h4>
+          <div class="row cf text-muted p-3">
+            {% if True %}
+            <div class="col-6">
+              {{ article.likes }} <a><i class="far fa-eye"></i></a>
+            </div>
+            {% else %}
+            <div class="col-6">
+              {{ article.likes }} <a href="{%url 'login'%}"><i class="far fa-thumbs-up"></i></a>
+            </div>
+            {% endif%}
+            <div class="col-6">
+
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="rounded-lg shadow space text-center">
+  <h1 class="p-3">Other Article</h1>
+  <div class="   d-flex justify-content-center row" >
+    {% for article in article_all %}
+    <div class="col-xl-4 col-lg-4 mt-4">
+      <div class="round_div   shadow-lg pt-1">
+        <div class="div_class border border-white  " >
+          <div class="card   rounded  ">
+            <div class="text-center mt-3">
+              <h3>{{article.header }}</h3>
+            </div>
+            <hr>
+            <div class="card-body">
+              {% if article.content|length >= 210 %}
+                <h4 class="card-text">{{article.content }} <a href="{% url 'article' article.header %}">....(Read More)</a> </h4>
+              {% else %}
+                <h4 class="card-text">{{article.content }} </h4>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row card-footer text-muted">
+            {% if True  %}
+            <div class="col-6 text-left">
+              {{ article.likes }} <a><i class="far fa-eye"></i></a>
+            </div>
+            {% else %}
+            <div class="col-6">
+              {{ article.likes }} <a href="{%url 'login'%}"><i class="far fa-thumbs-up"></i></a>
+            </div>
+            {% endif%}
+            <div class="col-6">
+              <div class=" text-right" >
+                {{ article.date }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+
+{% endblock  %}

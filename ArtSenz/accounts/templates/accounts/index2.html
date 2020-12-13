@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/246123c61b.js"></script>
+    <title>Golyric | Home</title>
+    <style>
+      .box_div {
+        background-image: linear-gradient(to right,#5465ff , #788bff, #b9b9f0, #dadaf5);
+      }
+      .round_div
+      {
+        border-radius: 25px;
+        background-color: #6a00f4;
+      }
+      body{
+			background-color: #f5f5fa;
+		}
+    .div_class{
+    border-radius: 25px;
+    background-color: #f5f5fa;
+    margin-bottom: -24px;
+  }
+  .footer{
+    background-color: #3a3a54;
+  }
+		.border-top
+		{
+			margin-top: -6px;
+			width: 100%;
+		}
+		.space{
+			margin-top: 6px;
+		}
+		.Back_Cool{
+			background-color: #ffffff;
+			width: 96%;
+		}
+    #id{
+      background-color: #5855ad;
+    }
+    .navbar-custom {
+    background-color: #5855ad;
+    background-image: linear-gradient(to right,#5855ad , #7a7af0, #8d8dc2, #5855ad);
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+
+    </style>
+</head>
+<body >
+  <div >
+    <nav class="navbar navbar-expand-lg  navbar-custom " id="sti">
+      <a class="navbar-brand font-weight-bold" href="#">GoLyric</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href"">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="">Contact Us <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="d-flex justify-content-center">
+      <form class="form-inline my-2 my-lg-0 ml-5">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Lyrics" >
+          <span class="input-group-btn">
+            <button class="btn btn-info " type="button">
+              <span><i class="fa fa-search" aria-hidden="true"></i></span>
+            </button>
+          </span>
+        </div>
+      </form>
+      {% if user.is_authenticated %}
+      <button class="btn btn-outline-light ml-2" type="button" data-toggle="modal" data-target="#staticBackdrop">
+        <span><i class="fa fa-user-check" aria-hidden="true"></i></span>
+      </button>
+      {% else %}
+      <button class="btn btn-outline-light ml-2" type="button" data-toggle="modal" data-target="#staticBackdrop">
+        <span><i class="fa fa-user-times" aria-hidden="true"></i></span>
+      </button>
+      {% endif%}
+    </div>
+  </nav>
+</div>
+<div class="  space d-flex justify-content-center rounded-lg shadow " >
+  <div class="rounded row p-5" >
+    <div class="round_div col-xl-4 col-lg-4 m-2 shadow-lg">
+      <div class="div_class  " >
+        <div class="card   rounded  ">
+          <div class="text-center mt-3">
+            <h4>Upload Birthday person, memories And Wish Them</h4>
+          </div>
+          <hr>
+          <div class="card-body">
+            <p class="card-text">There Some Question I Am goona Ask You That You Have To Answer Those Question (Don't tell me Your Identity). And Will Find You And Message On WhatsApp</p>
+          </div>
+        </div>
+        <div class="row card-footer text-muted">
+          <div class="col-6">
+            2 <a data-toggle="modal" data-target="#staticBackdrop"><i class="far fa-thumbs-up"></i></a>
+
+          </div>
+          <div class="col-6">
+            <div class=" text-right" >
+              2 days ago
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+<div class="  d-flex justify-content-center  " >
+  <div class="p-3 footer text-white border-top mt-5">
+    <div class="row">
+      <div class="col-lg-6  col-xl-6 text-center ">
+        <br>
+        <h5>Name of Portal</h5>
+        <h6>Make new memories with your friend, <br>Celebrate someone birthday who close to you, <br>And a lot of other fun activity .</h6>
+        <br>
+      </div>
+      <div class="col-lg-6  col-xl-6 ">
+        <div class="  	d-block d-md-none text-center ">
+          <ul>
+            <hr>
+            <br>
+            <h5>Quick Links</h5>
+             <a class="  active text-white"   data-toggle="modal" data-target="#staticBackdrop">
+                              <i class="fas fa-home"></i> Home
+                          </a>
+                          <br>
+                          <a class="  active text-white"   data-toggle="modal" data-target="#staticBackdrop">
+                              <i class="fas fa-user-lock"></i> Who I Am
+                          </a>
+                          <br>
+            <a class="  active text-white"   data-toggle="modal" data-target="#staticBackdrop">
+                              <i class="fas fa-birthday-cake"></i> Birthday Wishes
+                          </a>
+                          <br>
+            <a class="  active text-white"   data-toggle="modal" data-target="#staticBackdrop">
+                              <i class="far fa-file-image"></i> Wallpaper
+                          </a>
+          </ul>
+        </div>
+        <div class="d-none d-md-block ">
+          <ul>
+            <br>
+            <h5>Quick Links</h5>
+             <li>
+                              <a class="  active text-white"   data-toggle="modal" data-target="#staticBackdrop">
+                                  <i class="fas fa-home"></i> Home
+                              </a>
+                              <br>
+                          </li>
+             <li>
+                              <a class="  active text-white"   data-toggle="modal" data-target="#staticBackdrop">
+                                  <i class="fas fa-user-lock"></i> Who I Am
+                              </a>
+                              <br>
+                          </li>
+             <li>
+                              <a class="  active text-white"   data-toggle="modal" data-target="#staticBackdrop">
+                                  <i class="fas fa-birthday-cake"></i> Birthday Wishes
+                              </a>
+                              <br>
+                          </li>
+            <li>
+                              <a class="  active text-white"   data-toggle="modal" data-target="#staticBackdrop">
+                                  <i class="far fa-file-image"></i> Wallpaper
+                              </a>
+                          </li>
+           </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center " >
+  <div  class=" p-1 bg-dark text-secondary border-top  rounded-bottom mb-5 ">
+    <p class="text-center"><a href="disclaimer.html" class="text-reset"> Disclaimers </a>
+      <a href="about.html" class="text-reset"> About Us</a>
+          </p>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">User Login </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  method="post" action="{% url 'login' %}"  >
+          {% csrf_token %}
+          {{form.as_p}}
+           <!-- <div class="form-group ">
+              <input type="name" class="form-control" id="exampleFormControlInput1" name="uname" type="email"  placeholder="User Id" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="exampleFormControlInput1" name="pword" placeholder="Your password" required>
+            </div> -->
+          <button class="btn btn-primary" type="submit" name="submit">Submit </button>
+        </form>
+        <br>
+        <a href="forgot.php">Forgot </a> password <br>
+        <a href="register.php">Register </a> here if you don't have
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+  $(window).scroll(function (event) {
+      var scroll = $(window).scrollTop();
+      // console.log(typeof(scroll));
+      // console.log(typeof(scroll));
+      if (scroll >= 200) {
+        $("#sti").addClass('sticky-top');
+        var div = $("nav");
+        $("nav").first().fadeIn(800 );
+
+      }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'base.html'  %}
+{% load static %}
+{% block content %}
+  <div class="box_div mt-5">
+    <div class="d-flex justify-content-center " >
+      <div class="col-lg-5 col-sm-5 col-md-5 form_back mt-5 bg-light round_div p-5 mb-5">
+        <div class="text-center mb-3">
+          <h1>Login</h1><br>
+          <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Login">
+          </form>
+        </div>
+        <br>
+        <a href="{% url 'registration'%}">Register </a> here if you don't have any account
+      </div>
+    </div>
+  </div>
+
+{% endblock  %}
